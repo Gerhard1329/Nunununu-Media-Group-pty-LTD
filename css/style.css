@@ -44,6 +44,20 @@ body {
   gap: 12px;
 }
 
+.logo-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .logo-text h1 {
   font-size: 1.4rem;
   font-weight: 800;
@@ -277,6 +291,13 @@ section {
   margin-bottom: 1.5rem;
 }
 
+.competition-logo-img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 .prize-badge {
   background: #1a1a1a;
   border-radius: 24px;
@@ -457,6 +478,13 @@ footer {
   gap: 12px;
 }
 
+.footer-logo-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .footer-grid ul {
   list-style: none;
 }
@@ -537,6 +565,22 @@ footer {
   
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+
+  .logo-image {
+    height: 40px;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .footer-logo-img {
+    height: 35px;
+  }
+
+  .competition-logo-img {
+    width: 50px;
   }
 }
 
