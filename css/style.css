@@ -274,6 +274,30 @@ section {
 }
 
 /* Competition Section */
+#competition {
+  background-image: url('guide-to-broadcast-terminology.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+#competition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+#competition > .container {
+  position: relative;
+  z-index: 2;
+}
+
 .competition-card {
   background: linear-gradient(135deg, #0f0f0f, #080808);
   border-radius: 44px;
@@ -581,6 +605,10 @@ footer {
 
   .competition-logo-img {
     width: 50px;
+  }
+
+  #competition {
+    background-attachment: scroll;
   }
 }
 
