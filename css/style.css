@@ -275,7 +275,7 @@ section {
 
 /* Competition Section */
 #competition {
-  background-image: url('guide-to-broadcast-terminology.jpg');
+  background-image: url('../guide-to-broadcast-terminology.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
