@@ -430,6 +430,31 @@ section {
   margin-bottom: 1rem;
 }
 
+/* Expertise Section */
+#expertise {
+  background-image: url('../Blog%20image%20(2).jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+#expertise::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+#expertise > .container {
+  position: relative;
+  z-index: 2;
+}
+
 /* Expertise */
 .expertise-list {
   display: flex;
@@ -608,6 +633,10 @@ footer {
   }
 
   #competition {
+    background-attachment: scroll;
+  }
+
+  #expertise {
     background-attachment: scroll;
   }
 }
