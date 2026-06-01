@@ -210,6 +210,31 @@ section {
   color: #FFD966;
 }
 
+/* Services Section */
+#services {
+  background-image: url('../Film%20.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+#services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+#services > .container {
+  position: relative;
+  z-index: 2;
+}
+
 /* Services Grid */
 .services-grid {
   display: grid;
@@ -637,6 +662,10 @@ footer {
   }
 
   #expertise {
+    background-attachment: scroll;
+  }
+
+  #services {
     background-attachment: scroll;
   }
 }
