@@ -15,6 +15,15 @@ if (menuToggle) {
   });
 }
 
+// WhatsApp Toggle Interaction
+const whatsappToggle = document.getElementById('whatsappToggle');
+if (whatsappToggle) {
+  whatsappToggle.addEventListener('click', (e) => {
+    // The link opens WhatsApp directly via href
+    console.log('Opening WhatsApp chat with Nunununu Media Group');
+  });
+}
+
 // Competition Form Handler
 const compForm = document.getElementById('competitionForm');
 const compFeedback = document.getElementById('compFeedback');
