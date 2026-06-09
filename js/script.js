@@ -24,15 +24,13 @@ if (whatsappToggle) {
   });
 }
 
-// Competition Form Handler
+// Competition Form Handler - Allow Formspree to submit
 const compForm = document.getElementById('competitionForm');
 const compFeedback = document.getElementById('compFeedback');
 
 if (compForm) {
   compForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
+    // Get form values for client-side validation only
     const name = document.getElementById('compName')?.value.trim();
     const email = document.getElementById('compEmail')?.value.trim();
     const phone = document.getElementById('compPhone')?.value.trim();
@@ -42,77 +40,43 @@ if (compForm) {
     
     // Validation
     if (!name || !email || !phone || !age || !interest || !bio) {
+      e.preventDefault();
       compFeedback.innerHTML = '❌ Please fill in all required fields (*).';
       compFeedback.style.color = '#ffaa66';
       return;
     }
     
     if (!email.includes('@')) {
+      e.preventDefault();
       compFeedback.innerHTML = '❌ Please enter a valid email address.';
       compFeedback.style.color = '#ffaa66';
       return;
     }
     
-    // Store entry in localStorage (for debugging)
-    const entry = {
-      name,
-      email,
-      phone,
-      age,
-      interest,
-      bio,
-      portfolio: document.getElementById('compPortfolio')?.value || '',
-      date: new Date().toISOString()
-    };
-    
-    console.log('Competition Entry Saved:', entry);
-    
-    // Show success message
-    compFeedback.innerHTML = '🎉 Congratulations! Your competition entry has been received. Good luck!';
-    compFeedback.style.color = '#b3ffb3';
-    compFeedback.style.background = '#1e3a1e';
-    compFeedback.style.padding = '1rem';
-    compFeedback.style.borderRadius = '40px';
-    
-    // Reset form
-    compForm.reset();
-    
-    // Clear feedback after 5 seconds
-    setTimeout(() => {
-      compFeedback.innerHTML = '';
-      compFeedback.style.padding = '';
-    }, 5000);
+    // If validation passes, allow form to submit to Formspree
+    console.log('Competition form validation passed, submitting to Formspree...');
   });
 }
 
-// Contact Form Handler
+// Contact Form Handler - Allow Formspree to submit
 const contactForm = document.getElementById('contactForm');
 const contactFeedback = document.getElementById('contactFeedback');
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
     const name = document.getElementById('contactName')?.value.trim();
     const email = document.getElementById('contactEmail')?.value.trim();
     const message = document.getElementById('contactMsg')?.value.trim();
     
     if (!name || !email || !message) {
+      e.preventDefault();
       contactFeedback.innerHTML = '❌ Please fill in all fields.';
       contactFeedback.style.color = '#ffaa66';
       return;
     }
     
-    console.log('Contact Form Submitted:', { name, email, message });
-    
-    contactFeedback.innerHTML = '✨ Thanks! We\'ll be in touch shortly.';
-    contactFeedback.style.color = '#FFD966';
-    
-    contactForm.reset();
-    
-    setTimeout(() => {
-      contactFeedback.innerHTML = '';
-    }, 4000);
+    // If validation passes, allow form to submit to Formspree
+    console.log('Contact form validation passed, submitting to Formspree...');
   });
 }
 
